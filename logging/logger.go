@@ -21,26 +21,16 @@ const (
 
 type Field = zap.Field
 
-// function variables for all field types in github.com/uber-go/zap/field.go
+// function variables for all field types in https://github.com/uber-go/zap/blob/master/field.go
 var (
-	Skip       = zap.Skip
 	Binary     = zap.Binary
 	Bool       = zap.Bool
-	Boolp      = zap.Boolp
 	ByteString = zap.ByteString
-
-	//... ...
-
-	Float64   = zap.Float64
-	Float64p  = zap.Float64p
-	Float32   = zap.Float32
-	Float32p  = zap.Float32p
-	Durationp = zap.Durationp
-
-	//... ...
-
-	Int    = zap.Int
-	String = zap.String
+	Float64    = zap.Float64
+	Float32    = zap.Float32
+	Int        = zap.Int
+	Object     = zap.Object
+	String     = zap.String
 )
 
 type Logger struct {
@@ -70,6 +60,14 @@ func (l *Logger) Error(err error, fields ...Field) {
 // The variadic keysAndValues are processed in pairs, the first element of the pair is used as the field key and the second as the field value.
 func (l *Logger) ErrorWith(msg string, keysAndValues ...interface{}) {
 	l.l.Sugar().Errorw(msg, keysAndValues...)
+}
+
+// With creates a child logger and adds structured context to it. Fields added to the child don't affect the parent, and vice versa.
+func (l Logger) With(fields ...Field) Logger {
+	return Logger{
+		l:     l.l.With(fields...),
+		level: l.level,
+	}
 }
 
 // Sync calls the underlying Zap's Sync method, flushing any buffered log entries. Applications should take care to call Sync before exiting.
