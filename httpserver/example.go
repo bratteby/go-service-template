@@ -18,8 +18,8 @@ type exampleHandler struct {
 
 func (h exampleHandler) GetRoutes() func(r chi.Router) {
 	return func(r chi.Router) {
-		r.Post("/example", h.createExample)
-		r.Get("/example/{id}", h.getExample)
+		r.Post("/", h.createExample)
+		r.Get("/{id}", h.getExample)
 	}
 }
 

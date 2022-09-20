@@ -54,8 +54,13 @@ func (s Server) setupHandler() http.Handler {
 		encoder:        e,
 	}
 
-	// TODO: Attach middleare for auth
-	r.Route("/api", exampleHandler.GetRoutes())
+	r.Route("/api", func(r chi.Router) {
+		r.Use(chimiddleware.BasicAuth("Example", map[string]string{
+			"username": "nOt_saFE_PWD",
+		}))
+
+		r.Route("/example", exampleHandler.GetRoutes())
+	})
 
 	return r
 }
