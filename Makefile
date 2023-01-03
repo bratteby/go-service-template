@@ -1,6 +1,11 @@
+lint:
+	go fmt ./...
 
 test:
 	go test ./...
+
+docker/build:
+	docker build -t go-example-service:latest .
 
 mock:
 	go generate ./...
