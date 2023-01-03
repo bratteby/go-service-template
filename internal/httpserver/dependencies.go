@@ -3,7 +3,7 @@ package httpserver
 import (
 	"context"
 
-	"github.com/bratteby/go-service-template/example"
+	"github.com/bratteby/go-service-template/internal/example"
 	"github.com/google/uuid"
 )
 

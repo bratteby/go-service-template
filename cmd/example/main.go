@@ -5,10 +5,10 @@ import (
 	"os"
 	"os/signal"
 
-	"github.com/bratteby/go-service-template/example"
-	"github.com/bratteby/go-service-template/httpserver"
-	"github.com/bratteby/go-service-template/logging"
-	"github.com/bratteby/go-service-template/postgres"
+	"github.com/bratteby/go-service-template/internal/example"
+	"github.com/bratteby/go-service-template/internal/httpserver"
+	"github.com/bratteby/go-service-template/internal/logging"
+	"github.com/bratteby/go-service-template/internal/postgres"
 )
 
 func main() {

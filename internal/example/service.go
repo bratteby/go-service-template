@@ -4,7 +4,7 @@ import (
 	"context"
 	"fmt"
 
-	"github.com/bratteby/go-service-template/logging"
+	"github.com/bratteby/go-service-template/internal/logging"
 	"github.com/google/uuid"
 )
 

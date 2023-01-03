@@ -7,8 +7,8 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/bratteby/go-service-template/example"
-	"github.com/bratteby/go-service-template/logging"
+	"github.com/bratteby/go-service-template/internal/example"
+	"github.com/bratteby/go-service-template/internal/logging"
 )
 
 type encoder struct {

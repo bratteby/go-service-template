@@ -5,7 +5,7 @@ import (
 
 	"errors"
 
-	"github.com/bratteby/go-service-template/example"
+	"github.com/bratteby/go-service-template/internal/example"
 	"github.com/jackc/pgconn"
 	"github.com/jackc/pgerrcode"
 	"github.com/jackc/pgx/v4"

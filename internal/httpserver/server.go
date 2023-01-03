@@ -6,8 +6,8 @@ import (
 	"github.com/go-chi/chi/v5"
 	chimiddleware "github.com/go-chi/chi/v5/middleware"
 
-	"github.com/bratteby/go-service-template/httpserver/middleware"
-	"github.com/bratteby/go-service-template/logging"
+	"github.com/bratteby/go-service-template/internal/httpserver/middleware"
+	"github.com/bratteby/go-service-template/internal/logging"
 )
 
 type Server struct {

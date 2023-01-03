@@ -12,7 +12,7 @@ import (
 	chimiddleware "github.com/go-chi/chi/v5/middleware"
 	"go.uber.org/zap/zapcore"
 
-	"github.com/bratteby/go-service-template/logging"
+	"github.com/bratteby/go-service-template/internal/logging"
 )
 
 // RequestLoggerOptions contains the middleware configuration.
